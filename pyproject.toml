@@ -1,0 +1,26 @@
+[project]
+name = "metric"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Matthew Young", email = "myoung.space.science@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "aliasedkeys>=0.1.1",
+    "symbolic",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv.sources]
+symbolic = { git = "https://github.com/myoung-space-science/symbolic" }
+
+[dependency-groups]
+dev = [
+    "ipython>=8.31.0",
+    "pytest>=8.3.4",
+]
