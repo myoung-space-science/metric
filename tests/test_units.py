@@ -225,6 +225,13 @@ def test_unit_algebra():
     assert (u0 / u1)**2 == metric.unit('m^2 / (kg * m^2 / s^2)^2')
 
 
+def test_improved_algebraic_decomposition():
+    """Test for issue #2."""
+    u0 = metric.unit('m')
+    u1 = metric.unit('J')
+    assert u0 * u1 == metric.unit('m * J')
+
+
 def test_unit_multiply():
     """Test the ability to create a new compound unit with '*'."""
     cases = {

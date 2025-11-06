@@ -66,7 +66,7 @@ class Unit(symbolic.Expression):
             raise ValueError(f"Cannot compute {self!r} * {other}") from None
         if self is other or super().__eq__(other):
             return unit_factory(super().__pow__(2))
-        return _apply_operator(symbolic.product, self, other)
+        return _new_from_operator(symbolic.product, self, other)
 
     def __rmul__(self, other):
         """Called for other * self."""
@@ -372,6 +372,15 @@ class Unit(symbolic.Expression):
         return self._decomposed
 
 
+def _new_from_operator(f, a, b):
+    """Create a new unit after computing `f(a, b)`."""
+    r = _apply_operator(f, a, b)
+    # TODO: This is where we should start for issue #2.
+    if r:
+        return unit_factory(r)
+    return NotImplemented
+
+
 def _apply_operator(f, a, b):
     """Compute `f(a, b)` where at least `a` or `b` is a `~Unit`.
 
@@ -379,12 +388,11 @@ def _apply_operator(f, a, b):
     computing the result, in order to reduce the result as much as possible
     """
     if unitlike(a) and unitlike(b):
-        return unit_factory(f(_decompose_unit(a), _decompose_unit(b)))
+        return f(_decompose_unit(a), _decompose_unit(b))
     if isinstance(a, Unit) and isinstance(b, numbers.Real):
-        return unit_factory(f(a.decomposed, b))
+        return f(a.decomposed, b)
     if isinstance(a, numbers.Real) and isinstance(b, Unit):
-        return unit_factory(f(a, b.decomposed))
-    return NotImplemented
+        return f(a, b.decomposed)
 
 
 def _decompose_unit(unit: typing.Union[str, Unit]):
