@@ -60,6 +60,7 @@ _UNITS = [
         'symbol': 'Rs',
         'quantity': 'length',
         'name': 'solar radius',
+        'plural': 'solar radii',
     },
     {
         'symbol': 'g',
@@ -260,6 +261,7 @@ _UNITS = [
         'symbol': 'lx',
         'quantity': 'illuminance',
         'name': 'lux',
+        'plural': 'luxes',
     },
     {
         'symbol': 'Bq',
@@ -285,6 +287,7 @@ _UNITS = [
         'symbol': '1',
         'quantity': 'identity',
         'name': 'unitless',
+        'plural': 'unitless',
     },
 ]
 
@@ -318,14 +321,15 @@ def _build_named_units(
             for prefix in prefixes:
                 if prefix is base_prefix:
                     # Add the unscaled unit.
-                    mapped[(unit['symbol'], unit['name'])] = {
+                    mapped[(unit['symbol'], unit['name'], unit['plural'])] = {
                         'prefix': base_prefix, 'base': unit
                     }
                 elif prefix is not null_prefix:
                     # Add the full (prefix, unit) combination.
                     key = [
                         f"{prefix['symbol']}{unit['symbol']}",
-                        f"{prefix['name']}{unit['name']}"
+                        f"{prefix['name']}{unit['name']}",
+                        f"{prefix['name']}{unit['plural']}",
                     ]
                     if prefix['symbol'] == 'μ':
                         key += [f"u{unit['symbol']}"]
@@ -333,7 +337,28 @@ def _build_named_units(
     return aliasedkeys.Mapping(mapped)
 
 
-NAMED_UNITS = _build_named_units(_PREFIXES, _UNITS)
+def _add_plurals(
+    collection: list[dict[T, str]],
+    name_key: T='name',
+    plural_key: T='plural',
+) -> list[dict[T, str]]:
+    """Insert trivial plurals."""
+    # NOTE: This implementation takes advantage of the fact that an existing
+    # value of `entry[plural_key]` will overwrite the inserted value during
+    # unpacking. It is equivalent to
+    # - result = []
+    # - for entry in collection:
+    # -     if plural_key not in entry:
+    # -         entry[plural_key] = f"{entry[name_key]}s"
+    # -     result.append(entry)
+    # - return result
+    return [
+        {plural_key: f"{entry[name_key]}s", **entry}
+        for entry in collection
+    ]
+
+
+NAMED_UNITS = _build_named_units(_PREFIXES, _add_plurals(_UNITS))
 
 
 # A note about angles: Kalinin (2019) "On the status of plane and solid in the
