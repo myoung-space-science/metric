@@ -445,3 +445,24 @@ def test_named_unit_singleton():
     assert metric.NamedUnit('centimeter') is cm
 
 
+def test_plural_long_names():
+    """Make sure plural and singular names represent the same unit."""
+    cases = [
+        ('meter', 'meters'),
+        ('day', 'days'),
+        ('solar radius', 'solar radii'),
+        ('lux', 'luxes'),
+    ]
+    for (name, plural) in cases:
+        assert metric.NamedUnit(name) == metric.NamedUnit(plural)
+    errors = [
+        'solar radiuss',
+        'solar radiuses',
+        'unitlesss',
+        'unitlesses',
+        'luxs',
+    ]
+    for error in errors:
+        with pytest.raises(metric.UnitParsingError):
+            metric.NamedUnit(error)
+
