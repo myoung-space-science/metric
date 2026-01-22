@@ -892,8 +892,9 @@ class BaseUnit(typing.NamedTuple):
     """Metadata for a named unit without metric prefix."""
 
     symbol: str
-    name: str
     quantity: str
+    name: str
+    plural: str
 
 
 Instance = typing.TypeVar('Instance', bound='NamedUnit')
