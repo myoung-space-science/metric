@@ -48,243 +48,246 @@ SYSTEMS = {'mks', 'cgs'}
 _UNITS = [
     {
         'symbol': 'm',
-        'name': 'meter',
         'quantity': 'length',
+        'name': 'meter',
     },
     {
         'symbol': 'au',
-        'name': 'astronomical unit',
         'quantity': 'length',
+        'name': 'astronomical unit',
     },
     {
         'symbol': 'Rs',
-        'name': 'solar radius',
         'quantity': 'length',
+        'name': 'solar radius',
+        'plural': 'solar radii',
     },
     {
         'symbol': 'g',
-        'name': 'gram',
         'quantity': 'mass',
+        'name': 'gram',
     },
     {
         'symbol': 'nuc',
-        'name': 'nucleon',
         'quantity': 'mass number',
+        'name': 'nucleon',
     },
     {
         'symbol': 'amu',
-        'name': 'atomic mass unit',
         'quantity': 'mass number',
+        'name': 'atomic mass unit',
     },
     {
         'symbol': 's',
-        'name': 'second',
         'quantity': 'time',
+        'name': 'second',
     },
     {
         'symbol': 'min',
-        'name': 'minute',
         'quantity': 'time',
+        'name': 'minute',
     },
     {
         'symbol': 'h',
-        'name': 'hour',
         'quantity': 'time',
+        'name': 'hour',
     },
     {
         'symbol': 'd',
-        'name': 'day',
         'quantity': 'time',
+        'name': 'day',
     },
     {
         'symbol': 'A',
-        'name': 'ampere',
         'quantity': 'current',
+        'name': 'ampere',
     },
     {
         'symbol': 'K',
-        'name': 'kelvin',
         'quantity': 'temperature',
+        'name': 'kelvin',
     },
     {
         'symbol': 'mol',
-        'name': 'mole',
         'quantity': 'amount',
+        'name': 'mole',
     },
     {
         'symbol': '#',
-        'name': 'count',
         'quantity': 'number',
+        'name': 'count',
     },
     {
         'symbol': 'cd',
-        'name': 'candela',
         'quantity': 'luminous intensity',
+        'name': 'candela',
     },
     {
         'symbol': 'rad',
-        'name': 'radian',
         'quantity': 'plane angle',
+        'name': 'radian',
     },
     {
         'symbol': 'deg',
-        'name': 'degree',
         'quantity': 'plane angle',
+        'name': 'degree',
     },
     {
         'symbol': 'sr',
-        'name': 'steradian',
         'quantity': 'solid angle',
+        'name': 'steradian',
     },
     {
         'symbol': 'Hz',
-        'name': 'hertz',
         'quantity': 'frequency',
+        'name': 'hertz',
     },
     {
         'symbol': 'J',
-        'name': 'joule',
         'quantity': 'energy',
+        'name': 'joule',
     },
     {
         'symbol': 'erg',
-        'name': 'erg',
         'quantity': 'energy',
+        'name': 'erg',
     },
     {
         'symbol': 'eV',
-        'name': 'electronvolt',
         'quantity': 'energy',
+        'name': 'electronvolt',
     },
     {
         'symbol': 'N',
-        'name': 'newton',
         'quantity': 'force',
+        'name': 'newton',
     },
     {
         'symbol': 'dyn',
-        'name': 'dyne',
         'quantity': 'force',
+        'name': 'dyne',
     },
     {
         'symbol': 'Pa',
-        'name': 'pascal',
         'quantity': 'pressure',
+        'name': 'pascal',
     },
     {
         'symbol': 'W',
-        'name': 'watt',
         'quantity': 'power',
+        'name': 'watt',
     },
     {
         'symbol': 'C',
-        'name': 'coulomb',
         'quantity': 'charge',
+        'name': 'coulomb',
     },
     {
         'symbol': 'statC',
-        'name': 'statcoulomb',
         'quantity': 'charge',
+        'name': 'statcoulomb',
     },
     {
         'symbol': 'statA',
-        'name': 'statampere',
         'quantity': 'current',
+        'name': 'statampere',
     },
     {
         'symbol': 'statV',
-        'name': 'statvolt',
         'quantity': 'potential',
+        'name': 'statvolt',
     },
     {
         'symbol': 'e',
-        'name': 'fundamental charge',
         'quantity': 'charge',
+        'name': 'fundamental charge',
     },
     {
         'symbol': 'V',
-        'name': 'volt',
         'quantity': 'potential',
+        'name': 'volt',
     },
     {
         'symbol': 'Ω',
-        'name': 'ohm',
         'quantity': 'resistance',
+        'name': 'ohm',
     },
     {
         'symbol': 'S',
-        'name': 'seimens',
         'quantity': 'conductance',
+        'name': 'seimens',
     },
     {
         'symbol': 'F',
-        'name': 'farad',
         'quantity': 'capacitance',
+        'name': 'farad',
     },
     {
         'symbol': 'Wb',
-        'name': 'weber',
         'quantity': 'magnetic flux',
+        'name': 'weber',
     },
     {
         'symbol': 'Mx',
-        'name': 'maxwell',
         'quantity': 'magnetic flux',
+        'name': 'maxwell',
     },
     {
         'symbol': 'Oe',
-        'name': 'Oersted',
         'quantity': 'magnetic intensity',
+        'name': 'Oersted',
     },
     {
         'symbol': 'H',
-        'name': 'henry',
         'quantity': 'inductance',
+        'name': 'henry',
     },
     {
         'symbol': 'T',
-        'name': 'tesla',
         'quantity': 'magnetic induction',
+        'name': 'tesla',
     },
     {
         'symbol': 'G',
-        'name': 'gauss',
         'quantity': 'magnetic induction',
+        'name': 'gauss',
     },
     {
         'symbol': 'lm',
-        'name': 'lumen',
         'quantity': 'luminous flux',
+        'name': 'lumen',
     },
     {
         'symbol': 'lx',
-        'name': 'lux',
         'quantity': 'illuminance',
+        'name': 'lux',
+        'plural': 'luxes',
     },
     {
         'symbol': 'Bq',
-        'name': 'becquerel',
         'quantity': 'radioactivity',
+        'name': 'becquerel',
     },
     {
         'symbol': 'Ci',
-        'name': 'Curie',
         'quantity': 'radioactivity',
+        'name': 'Curie',
     },
     {
         'symbol': 'Gy',
-        'name': 'gray',
         'quantity': 'dosage',
+        'name': 'gray',
     },
     {
         'symbol': 'P',
-        'name': 'poise',
         'quantity': 'viscosity',
+        'name': 'poise',
     },
     {
         'symbol': '1',
-        'name': 'unitless',
         'quantity': 'identity',
+        'name': 'unitless',
+        'plural': 'unitless',
     },
 ]
 
@@ -318,14 +321,15 @@ def _build_named_units(
             for prefix in prefixes:
                 if prefix is base_prefix:
                     # Add the unscaled unit.
-                    mapped[(unit['symbol'], unit['name'])] = {
+                    mapped[(unit['symbol'], unit['name'], unit['plural'])] = {
                         'prefix': base_prefix, 'base': unit
                     }
                 elif prefix is not null_prefix:
                     # Add the full (prefix, unit) combination.
                     key = [
                         f"{prefix['symbol']}{unit['symbol']}",
-                        f"{prefix['name']}{unit['name']}"
+                        f"{prefix['name']}{unit['name']}",
+                        f"{prefix['name']}{unit['plural']}",
                     ]
                     if prefix['symbol'] == 'μ':
                         key += [f"u{unit['symbol']}"]
@@ -333,7 +337,28 @@ def _build_named_units(
     return aliasedkeys.Mapping(mapped)
 
 
-NAMED_UNITS = _build_named_units(_PREFIXES, _UNITS)
+def _add_plurals(
+    collection: list[dict[T, str]],
+    name_key: T='name',
+    plural_key: T='plural',
+) -> list[dict[T, str]]:
+    """Insert trivial plurals."""
+    # NOTE: This implementation takes advantage of the fact that an existing
+    # value of `entry[plural_key]` will overwrite the inserted value during
+    # unpacking. It is equivalent to
+    # - result = []
+    # - for entry in collection:
+    # -     if plural_key not in entry:
+    # -         entry[plural_key] = f"{entry[name_key]}s"
+    # -     result.append(entry)
+    # - return result
+    return [
+        {plural_key: f"{entry[name_key]}s", **entry}
+        for entry in collection
+    ]
+
+
+NAMED_UNITS = _build_named_units(_PREFIXES, _add_plurals(_UNITS))
 
 
 # A note about angles: Kalinin (2019) "On the status of plane and solid in the
