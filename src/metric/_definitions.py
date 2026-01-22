@@ -802,11 +802,10 @@ class _Property(collections.abc.Mapping):
             for k, v in merged.items()
         }
 
-    _operand = symbolic.OperandFactory()
     def _expand(self, term: symbolic.Term):
         """Create a `dict` of operands from this term."""
         return {
-            k: self._operand.create(v, term.exponent)
+            k: symbolic.operand(v, term.exponent)
             for k, v in self[term.base.replace('_', ' ')].items()
         }
 
