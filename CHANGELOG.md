@@ -1,5 +1,7 @@
 ## NEXT
 
+## v0.2.0
+
 - Refactor metric-property parsing with `symbolic.operand`
 - Allow plural unit names
 
