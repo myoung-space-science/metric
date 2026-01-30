@@ -105,7 +105,7 @@ wheels = [
 
 [[package]]
 name = "metric"
-version = "0.1.0"
+version = "0.2.0"
 source = { editable = "." }
 dependencies = [
     { name = "aliasedkeys" },
@@ -121,7 +121,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "aliasedkeys", specifier = ">=0.1.1" },
-    { name = "symbolic", git = "https://github.com/myoung-space-science/symbolic?rev=v0.2.0" },
+    { name = "symbolic", git = "https://github.com/myoung-space-science/symbolic?rev=v0.3.0" },
 ]
 
 [package.metadata.requires-dev]
@@ -248,8 +248,8 @@ wheels = [
 
 [[package]]
 name = "symbolic"
-version = "0.2.0"
-source = { git = "https://github.com/myoung-space-science/symbolic?rev=v0.2.0#e456606e836dc016f42128f2c4351b8d98e85754" }
+version = "0.3.0"
+source = { git = "https://github.com/myoung-space-science/symbolic?rev=v0.3.0#f81091e5a67db65972e266245d9ac888fba30615" }
 
 [[package]]
 name = "traitlets"

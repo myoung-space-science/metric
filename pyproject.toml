@@ -17,7 +17,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.uv.sources]
-symbolic = { git = "https://github.com/myoung-space-science/symbolic", rev = "v0.2.0" }
+symbolic = { git = "https://github.com/myoung-space-science/symbolic", rev = "v0.3.0" }
 
 [dependency-groups]
 dev = [
