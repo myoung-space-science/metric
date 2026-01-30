@@ -415,3 +415,12 @@ def test_unit_dimensionless():
     for unit, truth in cases.items():
         assert metric.unit(unit).dimensionless == truth
 
+
+def test_hash_unit(named_units):
+    """Test the ability to hash a unit (e.g., for use as a `dict` key)."""
+    for unit in named_units:
+        for key in {'name', 'symbol'}:
+            this = metric.unit(unit[key])
+            assert isinstance(this, metric.Unit)
+            assert isinstance(hash(this), int)
+
