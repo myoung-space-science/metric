@@ -50,6 +50,10 @@ class Unit(symbolic.Expression):
         self._quantity = None
         self._norms = dict.fromkeys(_reference.SYSTEMS)
 
+    def __hash__(self):
+        """Called for hash(self)."""
+        return hash(str(self))
+
     def normalize(self, system: str, quantity: str=None):
         """Represent this unit in base units of `system`.
 
